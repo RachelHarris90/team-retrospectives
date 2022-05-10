@@ -3,7 +3,8 @@
 
 ## Technologies used
 * ReactJS
-* GraphQL, with a Node.js and Express.js server
+* Node.js and Express.js server
+* RESTful API's
 * MongoDB and Mongoose ODM
 * JWT authentication
 * Deployed on Heroku
