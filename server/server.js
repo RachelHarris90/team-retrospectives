@@ -10,7 +10,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // Creates a new retro item
-app.post('/create', (req, res) => {
+app.post('/', (req, res) => {
     const newItem = new Item({ name: req.params.item, category: req.params.category });
     newItem.save();
     if (newItem) {
@@ -22,7 +22,7 @@ app.post('/create', (req, res) => {
   });
   
   // Finds all retro items
-  app.get('/find', (req, res) => {
+  app.get('/', (req, res) => {
     Item.find({}, (err, result) => {
       if (result) {
         res.status(200).json(result);
@@ -34,8 +34,8 @@ app.post('/create', (req, res) => {
   });
   
   // Finds retro item and deletes it
-  app.delete('/delete', (req, res) => {
-    Item.findOneAndDelete({ id: req.params.id }, (err, result) => {
+  app.delete('/', (req, res) => {
+    Item.deleteOne({ id: req.params.id }, (err, result) => {
       if (result) {
         res.status(200).json(result);
         console.log(`Deleted: ${result}`);
