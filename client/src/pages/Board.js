@@ -1,7 +1,4 @@
 import './Board.css';
-// import { Link } from 'react-router-dom';
-// import { useQuery } from '@apollo/client';
-// import { QUERY_ITEMS } from '../utils/queries'
 import React, { Component } from 'react';
 
 import Modal from '../components/Modal';
@@ -31,7 +28,7 @@ class Board extends Component {
                     handleSave={this.hideModal} 
                     handleClose={this.hideModal}>
                 </Modal>
-                <button type="button" onClick={this.showModal}>Add item</button>
+                <button type="button" onClick={this.showModal}>Add thoughts</button>
                 <div className="sections">
                     <div className="section">
                         <h3 className="section-heading">What went well?</h3>

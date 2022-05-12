@@ -9,7 +9,7 @@ import {
 import { setContext } from '@apollo/client/link/context';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-import Header from './pages/Header.js';
+import Header from './components/Header.js';
 import Board from './pages/Board.js';
 import Signup from './pages/Signup.js';
 import Login from './pages/Login.js';
