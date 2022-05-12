@@ -1,4 +1,7 @@
 import './Board.css';
+// import { Link } from 'react-router-dom';
+// import { useQuery } from '@apollo/client';
+// import { QUERY_ITEMS } from '../utils/queries'
 import React, { Component } from 'react';
 
 import Modal from '../components/Modal';
@@ -21,8 +24,8 @@ class Board extends Component {
     };
     render() {
         return (
-            <div>
-                <h1>Traditional retrospective</h1>
+            <div className='board-container'>
+                <h2>Traditional retrospective</h2>
                 <Modal 
                     show={this.state.show} 
                     handleSave={this.hideModal} 
@@ -31,15 +34,15 @@ class Board extends Component {
                 <button type="button" onClick={this.showModal}>Add item</button>
                 <div className="sections">
                     <div className="section">
-                        <h2 className="section-heading">What went well?</h2>
+                        <h3 className="section-heading">What went well?</h3>
                         <div className="section-area"></div>
                     </div>
                     <div className="section">
-                        <h2 className="section-heading">What didn't go well?</h2>
+                        <h3 className="section-heading">What didn't go well?</h3>
                         <div className="section-area"></div>
                     </div>
                     <div className="section">
-                        <h2 className="section-heading">What confuses you?</h2>
+                        <h3 className="section-heading">What confuses you?</h3>
                         <div className="section-area"></div>
                     </div>
                 </div>

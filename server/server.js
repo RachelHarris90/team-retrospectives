@@ -1,53 +1,40 @@
 const express = require('express');
-const mongodb = require('mongodb').MongoClient;
-const { Item } = require('./models');
+const { ApolloServer } = require ('apollo-server-express');
+const path = require('path');
 const db = require('./config/connection');
+
+const { typeDefs, resolvers } = require('./schemas');
 
 const app = express();
 const PORT = process.env.PORT || 3001;
 
+const server = new ApolloServer({
+  typeDefs,
+  resolvers,
+})
+
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
-// Creates a new retro item
-app.post('/', (req, res) => {
-    const newItem = new Item({ name: req.params.item, category: req.params.category });
-    newItem.save();
-    if (newItem) {
-      res.status(200).json(newItem);
-    } else {
-      console.log('Something went wrong');
-      res.status(500).json({ message: 'Something went wrong' });
-    }
-  });
-  
-  // Finds all retro items
-  app.get('/', (req, res) => {
-    Item.find({}, (err, result) => {
-      if (result) {
-        res.status(200).json(result);
-      } else {
-        console.log('Something went wrong');
-        res.status(500).json({ message: 'Something went wrong' });
-      }
-    });
-  });
-  
-  // Finds retro item and deletes it
-  app.delete('/', (req, res) => {
-    Item.deleteOne({ id: req.params.id }, (err, result) => {
-      if (result) {
-        res.status(200).json(result);
-        console.log(`Deleted: ${result}`);
-      } else {
-        console.log('Something went wrong');
-        res.status(500).json({ message: 'Something went wrong' });
-      }
-    });
-  });
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static(path.join(__dirname, '../client/build')));
+}
 
-db.once('open', () => {
-  app.listen(PORT, () => {
-    console.log(`API server running on port ${PORT}!`);
-  });
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, '../client/build/index.html'));
 });
+
+const startApolloServer = async (typeDefs, resolvers ) => {
+  await server.start();
+  server.applyMiddleware({ app });
+
+  db.once('open', () => {
+    app.listen(PORT, () => {
+      console.log(`API server running on port ${PORT}!`);
+      console.log(`Use GraphQL at http://localhost:${PORT}${server.graphqlPath}`);
+    })
+  })
+};
+
+
+startApolloServer (typeDefs, resolvers);
