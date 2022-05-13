@@ -1,4 +1,5 @@
 import './Header.css';
+import Logo from '../retrospective.png';
 import React from 'react';
 import Auth from '../utils/auth';
 import { Link } from 'react-router-dom';
@@ -48,6 +49,7 @@ function Header() {
 
     return (
         <header>
+            <img src={Logo} className="logo"></img>
             <h1>Team retrospectives</h1>
             <nav>
                 {showNavigation()}

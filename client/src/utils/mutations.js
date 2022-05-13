@@ -24,9 +24,9 @@ export const LOGIN_USER = gql`
   }
 `;
 
-export const CREATE_ITEM = gql`
-  mutation createItem($_id: String!, $text: String!, $category: String!) {
-    createVote(_id: $_id, text: $text, category: $category) {
+export const ADD_ITEM = gql`
+  mutation addItem($text: String!, $category: String!) {
+    addItem(text: $text, category: $category) {
       _id
       text
       category

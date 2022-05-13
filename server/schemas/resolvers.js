@@ -11,12 +11,12 @@ const resolvers = {
         item: async (parent, { itemId }) => {
             return Item.findOne({ _id: itemId });
         },
-    }
+    },
 
     Mutation: {
         addItem: async (parent, { text, category }) => {
-            const item = await Item.create({ text, category });
-        }
+            return Item.create({ text, category });
+        },
     }
 }
 

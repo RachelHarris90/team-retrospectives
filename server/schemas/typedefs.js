@@ -13,7 +13,7 @@ const typeDefs = gql`
     }
 
     type Mutation {
-        addItem(Text: String!, category: String!)
+        addItem(text: String!, category: String!): Item
     }
 `;
 
