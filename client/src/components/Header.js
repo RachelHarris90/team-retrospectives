@@ -49,7 +49,7 @@ function Header() {
 
     return (
         <header>
-            <img src={Logo} className="logo"></img>
+            <img src={Logo} alt="retrospective logo purple"className="logo"></img>
             <h1>Team retrospectives</h1>
             <nav>
                 {showNavigation()}
