@@ -55,6 +55,7 @@ const Board = () => {
   //   }
   // };
 
+    // const addVote 
 
 
     return (
@@ -93,10 +94,10 @@ const Board = () => {
                       {items.text}
                       {/* <button
                         type="button"
-                        name="delete"
-                        onClick={() => handleRemoveItem(items)}
+                        name="vote"
+                        onClick={handleVote}
                       >
-                        Delete
+                        +
                       </button> */}
                     </li>
                   ))}

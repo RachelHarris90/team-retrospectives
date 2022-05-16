@@ -8,7 +8,6 @@
 .board-header {
     justify-content: space-between;
     display: flex;
-    flex-direction: row;
     align-items: center;
 }
 
@@ -46,7 +45,6 @@
 ul {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
 }
 
 li {
@@ -57,6 +55,7 @@ li {
     background-color: #f4ea76;
     font-size: 1vw;
     margin: 3px;
+    padding: 3px;
 }
 
 

@@ -30,7 +30,6 @@ export const QUERY_ME = gql`
   }
 `;
 
-
 export const QUERY_ITEMS = gql`
   query getItems {
     items {

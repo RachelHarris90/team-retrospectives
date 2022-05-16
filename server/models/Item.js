@@ -9,7 +9,11 @@ const itemSchema = new Schema(
     category: {
       type: String,
       required: false
-    }
+    },
+    // votes: {
+    //   type: Number,
+    //   required: false
+    // }
   }
 );
 

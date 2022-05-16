@@ -12,12 +12,9 @@ const resolvers = {
         return Profile.findOne({ _id: profileId });
         },
 
-        me: async (parent, args, context) => {
-        if (context.user) {
-            return Profile.findOne({ _id: context.user._id });
-        }
-        throw new AuthenticationError('You need to be logged in!');
-        },
+        // me: async (parent, args, context) => {
+        //     return Profile.findOne({ _id: context.user._id });
+        // },
 
         items: async () => {
             return Item.find();
@@ -52,20 +49,15 @@ const resolvers = {
             const token = signToken(profile);
             return { token, profile };
           },
-        addItem: async (parent, { text, category }, context ) => {
-            if (context.user) {
-                return Item.create({ text, category });
-            }
-            throw new AuthenticationError('You need to be logged in')
-            
+        addItem: async (parent, { text, category }) => {
+            return Item.create({ text, category })
         },
-        removeItem: async (parent, { itemId }, context) => {
-            if (context.user) {
-                return Item.findOneAndDelete({ _id: itemId });
-            }
-            throw new AuthenticationError('You need to be logged in')
-            
-        },
+        // addVote: async (parent, { vote}) => {
+        //     return Item.vote({ vote })
+        // }
+        // removeItem: async (parent, { itemId }, context) => {
+        //     return Item.findOneAndDelete({ _id: itemId })
+        // },
     }
 }
 
