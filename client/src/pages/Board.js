@@ -1,61 +1,46 @@
 import './Board.css';
-import React, { Component, useState } from 'react';
-import { useMutation } from '@apollo/client';
-import Modal from '../components/Modal';
+import React from 'react';
 
-import { ADD_ITEM } from '../utils/mutations';
+import AddModal from '../components/AddModal';
 
+import { useQuery } from '@apollo/client';
+import { QUERY_ITEMS } from '../utils/queries';
 
-class Board extends Component {
-  constructor() {
-    super();
-    this.state = {
-      show: false
-    };
-    this.showModal = this.showModal.bind(this);
-    this.hideModal = this.hideModal.bind(this);
-  }
+const Board = () => {
+  const { data } = useQuery(QUERY_ITEMS);
 
-  showModal = () => {
-    this.setState({ show: true });
-  };
-
-  hideModal = () => {
-    this.setState({ show: false });
-  };
-
-  
-  render() {
     return (
       <main className="board-container">
         <div className="board-header">
           <h2>Traditional retrospective</h2>
-          <Modal 
-            show={this.state.show} 
-            handleClose={this.hideModal} 
-            handleSave={this.hideModal}>
-          </Modal>
-          <button type="button" onClick={this.showModal}>
-            + Add thoughts
-          </button>
+          <AddModal />
         </div>
         <div className='sections'>
           <div className='section'>
               <h3 className='section-heading'>What went well?</h3>
-              <div className='section-area'></div>
+              <div className='section-area'>
+                <ul>
+                  {data.items.map((item) => (
+                    <li key={item.id}>
+                      {item.text}
+                    </li>
+                  ))}
+                </ul>
+              </div>
           </div>
           <div className='section'>
               <h3 className='section-heading'>What didn't go well?</h3>
-              <div className='section-area'></div>
+              <div className='section-area'>
+              </div>
           </div>
           <div className='section'>
               <h3 className='section-heading'>What confuses you?</h3>
-              <div className='section-area'></div>
+              <div className='section-area'>
+              </div>
           </div>
         </div> 
       </main>
     );
   };
-}
 
 export default Board;
