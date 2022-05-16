@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import Modal from '../components/Modal';
+import Modal from './Modal';
 
 
 class AddModal extends Component {

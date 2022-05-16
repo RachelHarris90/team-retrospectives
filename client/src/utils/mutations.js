@@ -35,4 +35,13 @@ export const ADD_ITEM = gql`
 `;
 
 
+export const REMOVE_ITEM = gql`
+  mutation removeItem($itemId: ID!) {
+    removeItem(ID: $itemId) {
+      _id
+      text
+      category
+    }
+  }
+`;
 

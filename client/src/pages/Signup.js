@@ -1,6 +1,5 @@
-import './Signup.css';
 import React, { useState } from 'react';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import { useMutation } from '@apollo/client';
 import { ADD_PROFILE } from '../utils/mutations';
@@ -15,6 +14,7 @@ const Signup = () => {
   });
   const [addProfile, { error, data }] = useMutation(ADD_PROFILE);
 
+  // update state based on form input changes
   const handleChange = (event) => {
     const { name, value } = event.target;
 
@@ -24,6 +24,7 @@ const Signup = () => {
     });
   };
 
+  // submit form
   const handleFormSubmit = async (event) => {
     event.preventDefault();
     console.log(formState);
@@ -40,39 +41,44 @@ const Signup = () => {
   };
 
   return (
-    <main>
-      <div>
-        <div className='form-container'>
-          <h3>Sign up</h3>
-          <div>
+    <main className="flex-row justify-center mb-4">
+      <div className="col-12 col-lg-10">
+        <div className="card">
+          <h4 className="card-header bg-dark text-light p-2">Sign Up</h4>
+          <div className="card-body">
             {data ? (
               <p>
-                
+                Success! You may now head{' '}
+                <Link to="/">back to the homepage.</Link>
               </p>
             ) : (
-              <form onSubmit={handleFormSubmit}className='form-fields'>
-                <input className='form-field'
+              <form onSubmit={handleFormSubmit}>
+                <input
+                  className="form-input"
                   placeholder="Your username"
                   name="name"
                   type="text"
                   value={formState.name}
                   onChange={handleChange}
                 />
-                <input className='form-field'
+                <input
+                  className="form-input"
                   placeholder="Your email"
                   name="email"
                   type="email"
                   value={formState.email}
                   onChange={handleChange}
                 />
-                <input className='form-field'
+                <input
+                  className="form-input"
                   placeholder="******"
                   name="password"
                   type="password"
                   value={formState.password}
                   onChange={handleChange}
                 />
-                <button className='form-field'
+                <button
+                  className="btn btn-block btn-info"
                   style={{ cursor: 'pointer' }}
                   type="submit"
                 >

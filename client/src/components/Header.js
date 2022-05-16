@@ -4,7 +4,11 @@ import React from 'react';
 import Auth from '../utils/auth';
 import { Link } from 'react-router-dom';
 
-function Header() {
+const Header = () => {
+    const logout = (event) => {
+        event.preventDefault();
+        Auth.logout();
+    };
     function showNavigation() {
         if (Auth.loggedIn()) {
             return (
@@ -14,8 +18,9 @@ function Header() {
                             Retro board
                         </Link>
                     </button>
-                    <button className="nav-item">
-                        {/* Add link to logout */}
+                    <button className="nav-item"
+                        onClick={logout}
+                        >
                         <Link to='/' className="nav-link">
                             Logout
                         </Link>
