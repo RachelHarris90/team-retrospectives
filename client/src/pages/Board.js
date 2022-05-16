@@ -55,8 +55,6 @@ const Board = () => {
   //   }
   // };
 
-    // const addVote 
-
 
     return (
       <main className="board-container">
@@ -70,7 +68,15 @@ const Board = () => {
               <div className='section-area'>
                 <ul>
                   {filterCat01().map((items) => (
-                    <li key={items.id}>{items.text}</li>
+                    <li key={items.id}>{items.text}
+                      <button
+                        type="button"
+                        name="vote"
+                        onClick={handleVote}
+                      >
+                        +
+                      </button>
+                    </li>
                   ))}
                 </ul>
               </div>
@@ -92,13 +98,6 @@ const Board = () => {
                   {filterCat03().map((items) => (
                     <li key={items.id}>
                       {items.text}
-                      {/* <button
-                        type="button"
-                        name="vote"
-                        onClick={handleVote}
-                      >
-                        +
-                      </button> */}
                     </li>
                   ))}
                 </ul>
