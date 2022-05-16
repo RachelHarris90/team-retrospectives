@@ -35,9 +35,12 @@ const Modal = ({ handleClose, handleSave, show, children }) => {
           <label>Category</label>
           <select
             name="category"
-            value={category}
+            defaultValue={"default"}
             onChange={(event) => setCategory(event.target.value)}
           >
+            <option value="default" disabled>
+              Select a category... 
+            </option>
             <option value="01">What went well?</option>
             <option value="02">What didn't go well?</option>
             <option value="03">What confuses you?</option>
