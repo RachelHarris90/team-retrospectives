@@ -13,7 +13,6 @@ import Header from './components/Header.js';
 import Board from './pages/Board.js';
 import Signup from './pages/Signup.js';
 import Login from './pages/Login.js';
-// import Drawer from './components/Drawer.js';
 
 const httpLink = createHttpLink({
   uri: '/graphql',

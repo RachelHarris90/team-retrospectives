@@ -8,6 +8,7 @@ import { QUERY_ITEMS } from '../utils/queries';
 
 const Board = () => {
   const { data } = useQuery(QUERY_ITEMS);
+  const items = data?.items || [];
 
     return (
       <main className="board-container">
@@ -20,10 +21,9 @@ const Board = () => {
               <h3 className='section-heading'>What went well?</h3>
               <div className='section-area'>
                 <ul>
-                  {data.items.map((item) => (
-                    <li key={item.id}>
-                      {item.text}
-                    </li>
+                  {items &&
+                    items.map((item) => (
+                    <li key={item.id}>{item.text}</li>
                   ))}
                 </ul>
               </div>
