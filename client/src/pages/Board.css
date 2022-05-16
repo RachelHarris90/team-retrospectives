@@ -30,7 +30,7 @@
 }
 
 .section-area {
-    height: 300px;
+    height: 500px;
 }
 
 .add-button {
@@ -41,6 +41,22 @@
     font-size: 16px;
     padding: 8px;
     border-radius: 3px;
+}
+
+ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+li {
+    list-style: none;
+    width: 100px;
+    height: 100px;
+    border: none;
+    background-color: #f4ea76;
+    font-size: 1vw;
+    margin: 3px;
 }
 
 
