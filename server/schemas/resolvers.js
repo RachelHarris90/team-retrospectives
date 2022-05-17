@@ -1,5 +1,6 @@
 const { AuthenticationError } = require('apollo-server-express');
 const { Item } = require('../models');
+const Board = require('../models/Board');
 const { signToken } = require('../utils/auth');
 
 const resolvers = {
@@ -23,6 +24,12 @@ const resolvers = {
         item: async (parent, { itemId }) => {
             return Item.findOne({ _id: itemId });
         },
+        boards: async () => {
+            return Board.find();
+        },
+        board: async (parent, { boardId }) => {
+            return Board.findOne({ _id: boardId })
+        }
 
     },
 
@@ -52,12 +59,12 @@ const resolvers = {
         addItem: async (parent, { text, category }) => {
             return Item.create({ text, category })
         },
-        // addVote: async (parent, { vote}) => {
-        //     return Item.vote({ vote })
-        // }
-        // removeItem: async (parent, { itemId }, context) => {
-        //     return Item.findOneAndDelete({ _id: itemId })
-        // },
+        removeItem: async ( parent, { itemId } ) => {
+            return Item.findOneAndDelete({ _id: itemId })
+        },
+        addBoard: async (parent, { name }) => {
+            return Board.create({ name })
+        },
     }
 }
 

@@ -34,13 +34,19 @@ export const ADD_ITEM = gql`
   }
 `;
 
+export const ADD_BOARD = gql`
+  mutation addBoard($name: String!) {
+    addBoard(name: $name) {
+      _id
+      name
+    }
+  }
+`;
 
 export const REMOVE_ITEM = gql`
   mutation removeItem($itemId: ID!) {
-    removeItem(ID: $itemId) {
+    removeItem(itemId: $itemId) {
       _id
-      text
-      category
     }
   }
 `;

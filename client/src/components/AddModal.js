@@ -30,7 +30,7 @@ class AddModal extends Component {
             handleClose={this.hideModal} 
             handleSave={this.hideModal}>
           </Modal>
-          <button type="button" onClick={this.showModal}>
+          <button className="add-button" type="button" onClick={this.showModal}>
             + Add thoughts
           </button>
       </main>

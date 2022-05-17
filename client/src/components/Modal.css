@@ -35,9 +35,39 @@ textarea {
     font-size: 3vw;
 }
 
-textarea, select, .modal-button  {
+h3, textarea, select, label  {
     margin: 7px;
 }
+
+select {
+    font-size: 16px;
+    padding: 8px;
+    border-radius: 3px;
+    margin: 7px;
+}
+
+.modal-button-save {
+    background-color: var(--dark-color);
+    border-width: 1px;
+    color: var(--text-color-light);
+    font-size: 16px;
+    padding: 8px;
+    border-radius: 3px;
+    margin: 7px;
+    border: none;
+}
+
+.modal-button-close {
+    background-color: grey;
+    border-width: 1px;
+    color: var(--text-color-light);
+    font-size: 16px;
+    padding: 8px;
+    border-radius: 3px;
+    margin: 7px;
+    border: none;
+}
+
 
 .display-block {
     display: block;
@@ -47,6 +77,13 @@ textarea, select, .modal-button  {
     display: none;
 }
 
+
+::placeholder {
+    font-style: italic;
+    font-size: 1em;
+    padding: 5px;
+    color: rgb(177, 175, 175)
+  }
 
 
 

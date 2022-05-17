@@ -14,8 +14,13 @@ const Header = () => {
             return (
                 <div className="nav-items">
                     <button className="nav-item">
+                        <Link to='/' className="nav-link">
+                            Home
+                        </Link>
+                    </button>
+                    <button className="nav-item">
                         <Link to='/board' className="nav-link">
-                            Retro board
+                            Current retro
                         </Link>
                     </button>
                     <button className="nav-item"
@@ -30,13 +35,6 @@ const Header = () => {
         } else {
             return (
                 <div className="nav-items">
-                    <button 
-                    // To be removed after auth is implemented
-                    className="nav-item">
-                        <Link to='/board' className="nav-link">
-                            Retro board
-                        </Link>
-                    </button>
                     <button className="nav-item">
                         <Link to='/login' className="nav-link">
                             Login
@@ -47,6 +45,18 @@ const Header = () => {
                             Signup
                         </Link>
                     </button>
+                    <button 
+                    // To be removed after auth is implemented
+                    className="nav-item">
+                        <Link to='/' className="nav-link">
+                            Home
+                        </Link>
+                    </button>
+                    <button className="nav-item">
+                        <Link to='/board' className="nav-link">
+                            Current retro
+                        </Link>
+                    </button>
                 </div>
             )
         }
@@ -55,8 +65,8 @@ const Header = () => {
     return (
         <header>
             <img src={Logo} alt="retrospective logo purple"className="logo"></img>
-            <h1>Team retrospectives</h1>
-            <nav>
+            <h1 className="header-heading">Team retrospectives</h1>
+            <nav className="nav">
                 {showNavigation()}
             </nav>
         </header>

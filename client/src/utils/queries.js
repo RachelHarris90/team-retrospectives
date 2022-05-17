@@ -40,6 +40,15 @@ export const QUERY_ITEMS = gql`
   }
 `;
 
+export const QUERY_BOARDS = gql`
+  query getBoards {
+    boards {
+      _id
+      name
+    }
+  }
+`;
+
 export const QUERY_SINGLE_ITEM = gql`
   query getSingleItem($itemId: ID!) {
     thought(itemId: $itemId) {

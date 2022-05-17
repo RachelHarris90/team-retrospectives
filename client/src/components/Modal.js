@@ -47,16 +47,17 @@ const Modal = ({ handleClose, handleSave, show, children }) => {
           </select>
           <textarea 
             name="text"
+            placeholder="Type your thoughts..."
             value={text}
             onChange={(event) => setText(event.target.value)}
             rows="4"
             cols="50"
           >
           </textarea>
-          <button type="submit" onClick={handleSave}>
+          <button type="submit" className="modal-button-save" onClick={handleSave}>
             Save
           </button>
-          <button type="button" onClick={handleClose}>
+          <button type="button" className="modal-button-close" onClick={handleClose}>
             Close
           </button>
         </form>
