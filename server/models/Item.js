@@ -10,10 +10,6 @@ const itemSchema = new Schema(
       type: String,
       required: false
     },
-    // votes: {
-    //   type: Number,
-    //   required: false
-    // }
   }
 );
 

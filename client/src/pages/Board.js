@@ -3,8 +3,8 @@ import React from 'react';
 
 import AddModal from '../components/AddModal';
 
-// import { useMutation } from '@apollo/client';
-// import { REMOVE_ITEM } from '../utils/mutations';
+import { useMutation } from '@apollo/client';
+import { REMOVE_ITEM } from '../utils/mutations';
 
 import { useQuery } from '@apollo/client';
 import { QUERY_ITEMS } from '../utils/queries';
@@ -31,31 +31,26 @@ const Board = () => {
     )
   }
   
-  // const itemId = items.id
-  // const [removeItem, { error }] = useMutation(REMOVE_ITEM)
+  const [removeItem, { error }] = useMutation(REMOVE_ITEM)
 
-  // const handleRemoveItem = async (event) => {
-  //   event.preventDefault();
+  const handleRemoveItem = async (id) => {
 
-  //   try {
-  //     const { event } = await removeItem({
-  //       variables: { itemId },
-  //     });
+    try {
+      const { event } = await removeItem({
+        variables: { itemId: id },
+      });
 
-  //     window.location.reload();
-  //     console.log(event.target.value);
+      window.location.reload();
 
-  //   } catch (err) {
-  //     console.error(err);
-  //     console.log(event.target.value);
-  //   }
-  // };
+    } catch (err) {
+      console.error(err);
+    }
+  };
 
     return (
       <main className="board-container">
         <div className="board-header">
           <h2>Sprint 3 retrospective</h2>
-          <AddModal />
         </div>
         <div className="sections">
           <div className="section">
@@ -66,12 +61,12 @@ const Board = () => {
                     <li className="item-card"
                       key={items._id}
                     >{items.text}
-                      {/* <button className="deleteButton"
+                      <button className="deleteButton"
                         name="itemId"
                         value={items._id}
-                        onClick={handleRemoveItem} >
+                        onClick={() => handleRemoveItem(items._id)} >
                         ✗
-                      </button> */}
+                      </button>
                     </li>
                   ))}
                 </ul>
@@ -85,12 +80,12 @@ const Board = () => {
                     <li className="item-card"
                     key={items._id}
                   >{items.text}
-                    {/* <button className="deleteButton"
+                    <button className="deleteButton"
                       name="itemId"
                       value={items._id}
                       onClick={handleRemoveItem} >
                       ✗
-                    </button> */}
+                    </button>
                   </li>
                   ))}
                 </ul>
@@ -104,16 +99,17 @@ const Board = () => {
                     <li className="item-card"
                     key={items._id}
                   >{items.text}
-                    {/* <button className="deleteButton"
+                    <button className="deleteButton"
                       name="itemId"
                       value={items._id}
                       onClick={handleRemoveItem} >
                       ✗
-                    </button> */}
+                    </button>
                   </li>
                   ))}
                 </ul>
               </div>
+              <AddModal />
           </div>
         </div> 
       </main>

@@ -52,6 +52,7 @@ ul {
     font-size: 1vw;
     margin: 3px;
     padding: 3px;
+    position: relative;
 }
 
 .deleteButton {
@@ -61,6 +62,9 @@ ul {
     color: var(--text-color-light);
     margin-right: 10px;
     margin-top: 10px;
+    position: absolute;
+    top: 0px;
+    right: 0px;
 }
 
 
@@ -68,5 +72,9 @@ ul {
     .sections {
         display: flex;
         flex-direction: column;
+    }
+
+    .item-card {
+        font-size: 3vw;
     }
 }
