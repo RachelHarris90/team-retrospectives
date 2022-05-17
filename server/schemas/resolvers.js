@@ -1,6 +1,7 @@
 const { AuthenticationError } = require('apollo-server-express');
 const { Item } = require('../models');
 const Board = require('../models/Board');
+const Action = require('../models/Action');
 const { signToken } = require('../utils/auth');
 
 const resolvers = {
@@ -29,7 +30,13 @@ const resolvers = {
         },
         board: async (parent, { boardId }) => {
             return Board.findOne({ _id: boardId })
-        }
+        },
+        actions: async () => {
+            return Action.find();
+        },
+        action: async (parent, { actionId }) => {
+            return Action.findOne({ _id: actionId })
+        },
 
     },
 
@@ -64,6 +71,12 @@ const resolvers = {
         },
         addBoard: async (parent, { name }) => {
             return Board.create({ name })
+        },
+        addAction: async (parent, { text, assignee }) => {
+            return Action.create({ text, assignee })
+        },
+        removeAction: async ( parent, { actionId } ) => {
+            return Item.findOneAndDelete({ _id: actionId })
         },
     }
 }

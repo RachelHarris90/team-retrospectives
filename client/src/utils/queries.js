@@ -49,12 +49,12 @@ export const QUERY_BOARDS = gql`
   }
 `;
 
-export const QUERY_SINGLE_ITEM = gql`
-  query getSingleItem($itemId: ID!) {
-    thought(itemId: $itemId) {
+export const QUERY_ACTIONS = gql`
+  query getActions {
+    actions {
       _id
       text
-      category
+      assignee
     }
   }
 `;

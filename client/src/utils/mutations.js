@@ -50,3 +50,21 @@ export const REMOVE_ITEM = gql`
     }
   }
 `;
+
+export const ADD_ACTION = gql`
+  mutation addAction($text: String!, $assignee: String!) {
+    addAction(text: $text, assignee: $assignee) {
+      _id
+      text
+      assignee
+    }
+  }
+`;
+
+export const REMOVE_ACTION = gql`
+  mutation removeAction($actionId: ID!) {
+    removeAction(actionId: $actionId) {
+      _id
+    }
+  }
+`;

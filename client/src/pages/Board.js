@@ -1,7 +1,10 @@
 import './Board.css';
+import '../index.css'
+
 import React from 'react';
 
 import AddModal from '../components/AddModal';
+import Actions from '../pages/Actions'
 
 import { useMutation } from '@apollo/client';
 import { REMOVE_ITEM } from '../utils/mutations';
@@ -10,31 +13,14 @@ import { useQuery } from '@apollo/client';
 import { QUERY_ITEMS } from '../utils/queries';
 
 const Board = () => {
+  // Get items from db
   const { data } = useQuery(QUERY_ITEMS);
+  // If there are no items, return empty array
   const items = data?.items || [];
-  
-  function filterCat01() {
-    return items.filter(
-      (items) => items.category === "01"
-    )
-  }
 
-  function filterCat02() {
-    return items.filter(
-      (items) => items.category === "02"
-    )
-  }
-
-  function filterCat03() {
-    return items.filter(
-      (items) => items.category === "03"
-    )
-  }
-  
+  // Use mutation to remove item using it's ID
   const [removeItem, { error }] = useMutation(REMOVE_ITEM)
-
   const handleRemoveItem = async (id) => {
-
     try {
       const { event } = await removeItem({
         variables: { itemId: id },
@@ -46,10 +32,28 @@ const Board = () => {
       console.error(err);
     }
   };
-
+  
+  // Filter the items based on category to populate relevent sections
+  function filterCat01() {
+    return items.filter(
+      (items) => items.category === "01"
+    )
+  }
+  function filterCat02() {
+    return items.filter(
+      (items) => items.category === "02"
+    )
+  }
+  function filterCat03() {
+    return items.filter(
+      (items) => items.category === "03"
+    )
+  }
+  
+  // Display retro board, with sections and corresponding items
     return (
-      <main className="board-container">
-        <div className="board-header">
+      <main className="container">
+        <div className="container-header">
           <h2>Sprint 3 retrospective</h2>
         </div>
         <div className="sections">
@@ -65,7 +69,7 @@ const Board = () => {
                         name="itemId"
                         value={items._id}
                         onClick={() => handleRemoveItem(items._id)} >
-                        ✗
+                        x
                       </button>
                     </li>
                   ))}
@@ -75,17 +79,17 @@ const Board = () => {
           <div className="section">
               <h3 className="section-heading">What didn't go well?</h3>
               <div className="section-area">
-              <ul>
+              <ul className="item-card-list">
                   {filterCat02().map((items) => (
                     <li className="item-card"
                     key={items._id}
                   >{items.text}
                     <button className="deleteButton"
-                      name="itemId"
-                      value={items._id}
-                      onClick={handleRemoveItem} >
-                      ✗
-                    </button>
+                        name="itemId"
+                        value={items._id}
+                        onClick={() => handleRemoveItem(items._id)} >
+                        x
+                      </button>
                   </li>
                   ))}
                 </ul>
@@ -100,18 +104,27 @@ const Board = () => {
                     key={items._id}
                   >{items.text}
                     <button className="deleteButton"
-                      name="itemId"
-                      value={items._id}
-                      onClick={handleRemoveItem} >
-                      ✗
-                    </button>
+                        name="itemId"
+                        value={items._id}
+                        onClick={() => handleRemoveItem(items._id)} >
+                        x
+                      </button>
                   </li>
                   ))}
                 </ul>
               </div>
-              <AddModal />
+          </div>
+          <div>
+            {/* Add modal button and functionality to open the modal */}
+            <AddModal />
+            <div>
+              <Actions />
+            </div>
           </div>
         </div> 
+        <div>
+          
+        </div>
       </main>
     );
   };

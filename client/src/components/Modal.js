@@ -1,4 +1,6 @@
 import './Modal.css';
+import '../index.css'
+
 import React, { useState } from 'react';
 import { useMutation } from '@apollo/client';
 
@@ -45,7 +47,7 @@ const Modal = ({ handleClose, handleSave, show, children }) => {
             <option value="02">What didn't go well?</option>
             <option value="03">What confuses you?</option>
           </select>
-          <textarea 
+          <textarea className="thought-text-area"
             name="text"
             placeholder="Type your thoughts..."
             value={text}
@@ -54,12 +56,15 @@ const Modal = ({ handleClose, handleSave, show, children }) => {
             cols="50"
           >
           </textarea>
-          <button type="submit" className="modal-button-save" onClick={handleSave}>
-            Save
-          </button>
-          <button type="button" className="modal-button-close" onClick={handleClose}>
-            Close
-          </button>
+          <div className="action-buttons">
+            <button type="submit" className="button-save" onClick={handleSave}>
+              Save
+            </button>
+            <button type="button" className="button-close" onClick={handleClose}>
+              Cancel
+            </button>
+          </div>
+          
         </form>
       </section>
     </div>

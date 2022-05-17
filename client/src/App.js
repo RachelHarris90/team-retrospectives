@@ -15,6 +15,7 @@ import BoardList from './pages/BoardList.js';
 import Board from './pages/Board.js';
 import Signup from './pages/Signup.js';
 import Login from './pages/Login.js';
+import Actions from './pages/Actions.js';
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -68,6 +69,10 @@ function App() {
               <Route 
                   path="/board" 
                   element={<Board />} 
+              />
+              <Route 
+                  path="/actions" 
+                  element={<Actions />} 
               />
           </Routes>
         </div>

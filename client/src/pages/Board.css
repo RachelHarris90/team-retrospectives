@@ -1,44 +1,9 @@
-.board-container {
-    margin: 20px;
-    padding: 25px;
-    background-color: var(--card-color);
-    border-radius: 5px;
-}
-
-.board-header {
-    justify-content: space-between;
-    display: flex;
-    align-items: center;
-}
-
-.sections {
-    display: flex;
-    flex-direction: row;
-}
-
-.section {
-    width: 100%;
-    border: 0.5px solid;
-    border-color: #d4d4d4;
-    border-radius: 5px;
-    margin: 10px;
-}
-
-
 .section-area {
     height: 500px;
 }
 
-.add-button {
-    background-color: var(--dark-color);
-    border-width: 1px;
-    color: var(--text-color-light);
-    font-size: 16px;
-    padding: 8px;
-    border-radius: 3px;
-}
 
-ul {
+.item-card-list {
     display: flex;
     flex-wrap: wrap;
 }
@@ -50,21 +15,9 @@ ul {
     border: none;
     background-color: #f4ea76;
     font-size: 1vw;
-    margin: 3px;
+    margin: 10px;
     padding: 3px;
     position: relative;
-}
-
-.deleteButton {
-    border-radius: 100%;
-    border: none;
-    background-color: var(--medium-color);
-    color: var(--text-color-light);
-    margin-right: 10px;
-    margin-top: 10px;
-    position: absolute;
-    top: 0px;
-    right: 0px;
 }
 
 

@@ -1,4 +1,5 @@
 import './Header.css';
+
 import Logo from '../retrospective.png';
 import React from 'react';
 import Auth from '../utils/auth';
@@ -21,6 +22,9 @@ const Header = () => {
                     <button className="nav-item">
                         <Link to='/board' className="nav-link">
                             Current retro
+                        </Link>
+                        <Link to='/actions' className="nav-link">
+                            Actions
                         </Link>
                     </button>
                     <button className="nav-item"
@@ -55,6 +59,9 @@ const Header = () => {
                     <button className="nav-item">
                         <Link to='/board' className="nav-link">
                             Current retro
+                        </Link>
+                        <Link to='/actions' className="nav-link">
+                            Actions
                         </Link>
                     </button>
                 </div>

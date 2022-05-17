@@ -25,6 +25,12 @@ const typeDefs = gql`
         name: String
     }
 
+    type Action {
+        _id: ID
+        text: String
+        assignee: String
+    }
+
     type Query {
         profiles: [Profile]!
         profile(profileId: ID!): Profile
@@ -32,6 +38,8 @@ const typeDefs = gql`
         item(itemId: ID!): Item
         boards: [Board]!
         board(boardId: ID!): Board
+        actions: [Action]!
+        action(actionId: ID!): Action
     }
 
     type Mutation {
@@ -40,6 +48,8 @@ const typeDefs = gql`
         addItem(text: String!, category: String!): Item
         removeItem(itemId: ID!): Item
         addBoard(name: String!): Board
+        addAction(text: String!, assignee: String!): Action
+        removeAction(actionId: ID!): Action
     }
 `;
 

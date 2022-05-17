@@ -1,4 +1,5 @@
-import './BoardList.css';
+import '../index.css'
+
 import React, { useState } from 'react';
 
 import { useQuery } from '@apollo/client';
@@ -31,10 +32,10 @@ const BoardList = () => {
     };
 
     return(
-        <main className="board-list-container">
+        <main className="container">
             <div >
-                <h2 className="board-list-header">Retrospectives</h2>
-                <div className="board-list-sections">
+                <h2 className="container-header">Retrospectives</h2>
+                <div className="sections">
                     <form onSubmit={handleFormSubmit}>
                         <input 
                             name="name"
@@ -48,8 +49,7 @@ const BoardList = () => {
                     </form>
                     <div className="listed-boards">
                         <h3>Your boards</h3>
-                        <ul>
-                            
+                        <ul className="boards-list">
                             {boards &&
                             boards.map((boards) => (
                             <li key={boards._id}>
