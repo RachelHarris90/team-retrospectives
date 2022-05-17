@@ -76,7 +76,7 @@ const resolvers = {
             return Action.create({ text, assignee })
         },
         removeAction: async ( parent, { actionId } ) => {
-            return Item.findOneAndDelete({ _id: actionId })
+            return Action.findOneAndDelete({ _id: actionId })
         },
     }
 }
