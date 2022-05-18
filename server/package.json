@@ -4,7 +4,6 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
     "watch": "nodemon server.js",
     "seed": "node seeds/seed.js"
@@ -14,13 +13,11 @@
   "dependencies": {
     "apollo-server-express": "^3.7.0",
     "bcrypt": "^5.0.1",
-    "dotenv": "^16.0.1",
     "express": "^4.17.1",
     "graphql": "^16.5.0",
     "jsonwebtoken": "^8.5.1",
     "mongodb": "^3.6.7",
     "mongoose": "^6.3.3",
-    "node": "^17.7.2"
   },
   "devDependencies": {
     "nodemon": "^2.0.6",
