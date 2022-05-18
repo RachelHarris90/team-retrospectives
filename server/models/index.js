@@ -1,5 +1,5 @@
 const Item = require('./Item');
 const User = require('./Profile');
-// Add action here
+const Action = require('./Action')
 
-module.exports = { Item, User };
+module.exports = { Item, User, Action };
