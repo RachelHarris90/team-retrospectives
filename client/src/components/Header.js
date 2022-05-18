@@ -21,8 +21,10 @@ const Header = () => {
                     </button>
                     <button className="nav-item">
                         <Link to='/board' className="nav-link">
-                            Current retro
+                            Board
                         </Link>
+                    </button>
+                    <button className="nav-item">
                         <Link to='/actions' className="nav-link">
                             Actions
                         </Link>
@@ -58,8 +60,10 @@ const Header = () => {
                     </button>
                     <button className="nav-item">
                         <Link to='/board' className="nav-link">
-                            Current retro
+                            Board
                         </Link>
+                    </button>
+                    <button className="nav-item">
                         <Link to='/actions' className="nav-link">
                             Actions
                         </Link>

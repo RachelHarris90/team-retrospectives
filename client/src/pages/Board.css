@@ -1,3 +1,7 @@
+.board {
+    display: flex;
+    flex-direction: row;
+}
 .section-area {
     height: 500px;
 }
@@ -14,7 +18,7 @@
     height: 100px;
     border: none;
     background-color: #f4ea76;
-    font-size: 1vw;
+    font-size: 13px;
     margin: 10px;
     padding: 3px;
     position: relative;
@@ -25,9 +29,5 @@
     .sections {
         display: flex;
         flex-direction: column;
-    }
-
-    .item-card {
-        font-size: 3vw;
     }
 }

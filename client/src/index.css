@@ -92,7 +92,7 @@ select {
   border-radius: 3px;
 }
 
-.container {
+.container, .aside-components {
   margin: 20px;
   padding: 25px;
   background-color: var(--card-color);

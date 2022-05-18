@@ -21,6 +21,7 @@
 
 .action-text {
     font-weight: bold;
+    font-size: 14px;
 }
 
 .assignee-tag {
@@ -32,4 +33,5 @@
     width: 200px;
     align-items: center;
     color: white;
+    font-size: 14px;
 }

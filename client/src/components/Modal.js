@@ -49,7 +49,7 @@ const Modal = ({ handleClose, handleSave, show, children }) => {
           </select>
           <textarea className="thought-text-area"
             name="text"
-            placeholder="Type your thoughts..."
+            placeholder="What's on your mind.."
             value={text}
             onChange={(event) => setText(event.target.value)}
             rows="4"

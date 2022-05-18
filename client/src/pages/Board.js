@@ -52,79 +52,78 @@ const Board = () => {
   
   // Display retro board, with sections and corresponding items
     return (
-      <main className="container">
-        <div className="container-header">
-          <h2>Sprint 3 retrospective</h2>
-        </div>
-        <div className="sections">
-          <div className="section">
-              <h3 className="section-heading">What went well?</h3>
-              <div className="section-area">
-                <ul>
-                  {filterCat01().map((items) => (
-                    <li className="item-card"
+      <main className="board">
+        <div className="container">
+          <div className="container-header">
+            <h2>Sprint 3 retrospective</h2>
+          </div>
+          <div className="sections">
+            <div className="section">
+                <h3 className="section-heading">What went well?</h3>
+                <div className="section-area">
+                  <ul className="item-card-list">
+                    {filterCat01().map((items) => (
+                      <li className="item-card"
+                        key={items._id}
+                      >{items.text}
+                        <button className="deleteButton"
+                          name="itemId"
+                          value={items._id}
+                          onClick={() => handleRemoveItem(items._id)} >
+                          x
+                        </button>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+            </div>
+            <div className="section">
+                <h3 className="section-heading">What didn't go well?</h3>
+                <div className="section-area">
+                <ul className="item-card-list">
+                    {filterCat02().map((items) => (
+                      <li className="item-card"
                       key={items._id}
                     >{items.text}
                       <button className="deleteButton"
-                        name="itemId"
-                        value={items._id}
-                        onClick={() => handleRemoveItem(items._id)} >
-                        x
-                      </button>
+                          name="itemId"
+                          value={items._id}
+                          onClick={() => handleRemoveItem(items._id)} >
+                          x
+                        </button>
                     </li>
-                  ))}
-                </ul>
-              </div>
-          </div>
-          <div className="section">
-              <h3 className="section-heading">What didn't go well?</h3>
-              <div className="section-area">
-              <ul className="item-card-list">
-                  {filterCat02().map((items) => (
-                    <li className="item-card"
-                    key={items._id}
-                  >{items.text}
-                    <button className="deleteButton"
-                        name="itemId"
-                        value={items._id}
-                        onClick={() => handleRemoveItem(items._id)} >
-                        x
-                      </button>
-                  </li>
-                  ))}
-                </ul>
-              </div>
-          </div>
-          <div className="section">
-              <h3 className="section-heading">What confuses you?</h3>
-              <div className="section-area">
-                <ul>
-                  {filterCat03().map((items) => (
-                    <li className="item-card"
-                    key={items._id}
-                  >{items.text}
-                    <button className="deleteButton"
-                        name="itemId"
-                        value={items._id}
-                        onClick={() => handleRemoveItem(items._id)} >
-                        x
-                      </button>
-                  </li>
-                  ))}
-                </ul>
-              </div>
-          </div>
-          <div>
-            {/* Add modal button and functionality to open the modal */}
-            <AddModal />
-            <div>
-              <Actions />
+                    ))}
+                  </ul>
+                </div>
             </div>
-          </div>
-        </div> 
-        <div>
-          
+            <div className="section">
+                <h3 className="section-heading">What confuses you?</h3>
+                <div className="section-area">
+                  <ul>
+                    {filterCat03().map((items) => (
+                      <li className="item-card"
+                      key={items._id}
+                    >{items.text}
+                      <button className="deleteButton"
+                          name="itemId"
+                          value={items._id}
+                          onClick={() => handleRemoveItem(items._id)} >
+                          x
+                        </button>
+                    </li>
+                    ))}
+                  </ul>
+                </div>
+            </div>
+          </div> 
         </div>
+        <div className="aside-components">
+              {/* Add modal button and functionality to open the modal */}
+              <AddModal />
+              <div>
+                <Actions />
+              </div>
+            </div>
       </main>
     );
   };

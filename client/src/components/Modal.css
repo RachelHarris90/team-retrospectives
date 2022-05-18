@@ -17,11 +17,11 @@
     top:50%;
     left:50%;
     transform: translate(-50%,-50%);
+    align-items: center;
 }
 
-
 .thought-text-area {
-    width: 100%;
+    width: 98%;
     height: 300px;
     border: none;
     background-color: #f4ea76;

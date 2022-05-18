@@ -63,10 +63,6 @@ function App() {
                 element={<Profile />}
               />
               <Route 
-                  path="/" 
-                  element={<BoardList />} 
-              />
-              <Route 
                   path="/board" 
                   element={<Board />} 
               />
