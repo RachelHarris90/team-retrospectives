@@ -4,9 +4,9 @@
     justify-content: space-around;
 }
 
-.action-list {
+.actions-list {
     list-style: none;
-    padding-left: 0;
+    padding: 0;
 }
 
 .action-list-item {

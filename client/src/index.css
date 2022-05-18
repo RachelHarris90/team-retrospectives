@@ -72,15 +72,20 @@ select {
 .deleteButton {
   height: 22px;
   width: 22px;
-  border-radius: 100%;
   border: none;
   position: absolute;
   top: -10px;
   right: -10px;
-  background-color: #383838;
-  color: white;
-  font-size: 15px;
-  font-weight: bold;
+  opacity: 0;
+  transition: 0.1s linear;
+  background-image: url(remove.png);
+  background-position: 50%;
+  background-size: contain;
+  color: transparent;
+}
+
+.item-card:hover .deleteButton, .action-list-item:hover .deleteButton {
+  opacity: 1;
 }
 
 .add-button {

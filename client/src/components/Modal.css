@@ -1,15 +1,16 @@
 .modal {
-    position: fixed;
     top: 0;
     left: 0;
     width:100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.6);
+    position: absolute; 
+    z-index: 1;
   }
   
 .modal-main {
     padding: 10px;
-    position:fixed;
+    position:absolute;
     background: white;
     border-radius: 5px;
     width: 320px;
@@ -18,6 +19,7 @@
     left:50%;
     transform: translate(-50%,-50%);
     align-items: center;
+    z-index: 1;
 }
 
 .thought-text-area {

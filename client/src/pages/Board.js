@@ -56,6 +56,9 @@ const Board = () => {
         <div className="container">
           <div className="container-header">
             <h2>Sprint 3 retrospective</h2>
+            <div className="aside-components">
+            <AddModal />
+          </div>
           </div>
           <div className="sections">
             <div className="section">
@@ -99,7 +102,7 @@ const Board = () => {
             <div className="section">
                 <h3 className="section-heading">What confuses you?</h3>
                 <div className="section-area">
-                  <ul>
+                  <ul className="item-card-list">
                     {filterCat03().map((items) => (
                       <li className="item-card"
                       key={items._id}
@@ -118,12 +121,8 @@ const Board = () => {
           </div> 
         </div>
         <div className="aside-components">
-              {/* Add modal button and functionality to open the modal */}
-              <AddModal />
-              <div>
-                <Actions />
-              </div>
-            </div>
+          <Actions />
+        </div>
       </main>
     );
   };

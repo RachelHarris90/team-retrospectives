@@ -2,6 +2,7 @@ const { AuthenticationError } = require('apollo-server-express');
 const { Item } = require('../models');
 const Board = require('../models/Board');
 const Action = require('../models/Action');
+const Profile = require('../models/Profile');
 const { signToken } = require('../utils/auth');
 
 const resolvers = {
@@ -11,7 +12,7 @@ const resolvers = {
         },
       
         profile: async (parent, { profileId }) => {
-        return Profile.findOne({ _id: profileId });
+            return Profile.findOne({ _id: profileId });
         },
 
         // me: async (parent, args, context) => {

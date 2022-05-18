@@ -1,4 +1,3 @@
-import './App.css';
 import React from "react";
 import {
   ApolloClient,
@@ -16,6 +15,7 @@ import Board from './pages/Board.js';
 import Signup from './pages/Signup.js';
 import Login from './pages/Login.js';
 import Actions from './pages/Actions.js';
+import LoggedOut from './pages/LoggedOut';
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -63,12 +63,16 @@ function App() {
                 element={<Profile />}
               />
               <Route 
-                  path="/board" 
+                  path="/" 
                   element={<Board />} 
               />
               <Route 
                   path="/actions" 
                   element={<Actions />} 
+              />
+              <Route 
+                  path="/loggedOut" 
+                  element={<LoggedOut />} 
               />
           </Routes>
         </div>

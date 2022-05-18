@@ -16,11 +16,6 @@ const Header = () => {
                 <div className="nav-items">
                     <button className="nav-item">
                         <Link to='/' className="nav-link">
-                            Home
-                        </Link>
-                    </button>
-                    <button className="nav-item">
-                        <Link to='/board' className="nav-link">
                             Board
                         </Link>
                     </button>
@@ -32,7 +27,7 @@ const Header = () => {
                     <button className="nav-item"
                         onClick={logout}
                         >
-                        <Link to='/' className="nav-link">
+                        <Link to='/loggedOut' className="nav-link">
                             Logout
                         </Link>
                     </button>
@@ -49,23 +44,6 @@ const Header = () => {
                     <button className="nav-item">
                         <Link to='/signup' className="nav-link">
                             Signup
-                        </Link>
-                    </button>
-                    <button 
-                    // To be removed after auth is implemented
-                    className="nav-item">
-                        <Link to='/' className="nav-link">
-                            Home
-                        </Link>
-                    </button>
-                    <button className="nav-item">
-                        <Link to='/board' className="nav-link">
-                            Board
-                        </Link>
-                    </button>
-                    <button className="nav-item">
-                        <Link to='/actions' className="nav-link">
-                            Actions
                         </Link>
                     </button>
                 </div>
