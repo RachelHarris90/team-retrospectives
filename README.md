@@ -13,3 +13,12 @@
 * Team based Agile retrospectives
 * Authorisation based on the team of the user
 
+## Installation
+Ensure you're in the main folder
+npm i
+npm run develop
+
+## Usage
+
+
+## Link to presentation
