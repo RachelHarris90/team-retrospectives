@@ -4,9 +4,8 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "watch": "nodemon server.js",
+    "watch": "nodemon",
     "seed": "node seeds/seed.js"
   },
   "author": "",
@@ -17,12 +16,10 @@
     "express": "^4.17.1",
     "graphql": "^16.5.0",
     "jsonwebtoken": "^8.5.1",
-    "mongodb": "^3.6.7",
     "mongoose": "^6.3.3",
     "dotenv": "^16.0.1"
   },
   "devDependencies": {
-    "nodemon": "^2.0.6",
-    "dotenv": "^16.0.1"
+    "nodemon": "^2.0.6"
   }
 }
