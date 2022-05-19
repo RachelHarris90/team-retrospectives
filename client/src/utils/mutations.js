@@ -51,6 +51,7 @@ export const REMOVE_ITEM = gql`
   }
 `;
 
+
 export const ADD_ACTION = gql`
   mutation addAction($text: String!, $assignee: String!) {
     addAction(text: $text, assignee: $assignee) {
