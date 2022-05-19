@@ -4,7 +4,8 @@ import '../index.css'
 import React from 'react';
 
 import AddModal from '../components/AddModal';
-import Actions from '../pages/Actions'
+import ActionList from '../components/ActionList'
+import ActionForm from '../components/ActionForm'
 
 import { useMutation } from '@apollo/client';
 import { REMOVE_ITEM } from '../utils/mutations';
@@ -121,7 +122,8 @@ const Board = () => {
           </div> 
         </div>
         <div>
-          <Actions />
+          <ActionList />
+          <ActionForm />
         </div>
       </main>
     );
