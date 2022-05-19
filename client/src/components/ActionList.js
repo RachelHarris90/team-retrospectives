@@ -29,7 +29,7 @@ const ActionList = () => {
 
     return (
         <main>
-            <div>
+            <div className="container">
                 <h3>Actions</h3>
                 <ul className="actions-list">
                     {actions &&

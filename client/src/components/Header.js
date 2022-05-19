@@ -15,7 +15,7 @@ const Header = () => {
             return (
                 <div className="nav-items">
                     <button className="nav-item">
-                        <Link to='/' className="nav-link">
+                        <Link to='/board' className="nav-link">
                             Board
                         </Link>
                     </button>

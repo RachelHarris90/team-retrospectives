@@ -27,7 +27,7 @@ form {
 
 textarea, input, select, label, button, .form-input  {
   margin-top: 7px;
-  width: 90%;
+  width: 95%;
 }
 
 h3 {
@@ -99,11 +99,15 @@ select {
   width: 100%;
 }
 
-.container, .aside-components {
-  margin: 20px;
+.container {
+  margin: 15px;
   padding: 25px;
   background-color: var(--card-color);
   border-radius: 5px;
+}
+
+.login-signup-container {
+  width: 40%;
 }
 
 .container-header {
@@ -123,6 +127,13 @@ select {
   border-color: #d4d4d4;
   border-radius: 5px;
   margin: 10px;
+}
+
+.action-list-wide {
+  width: 100%;
+  border: 0.5px solid;
+  border-color: #d4d4d4;
+  border-radius: 5px;
 }
 
 .form-container {

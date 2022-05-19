@@ -39,7 +39,7 @@ const ActionsForm = () => {
     }
 
     return (
-        <main>
+        <main className="container">
             <form onSubmit={handleFormSubmit}>
                 <h3>Create new action</h3>
                 <label>

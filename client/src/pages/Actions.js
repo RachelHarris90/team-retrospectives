@@ -9,9 +9,11 @@ import ActionList from '../components/ActionList'
 const Actions = () => {
 
     return( 
-        <main>
-            <ActionList />
+        <main className="sections">
             <ActionForm />
+            <div className="action-list-wide">
+                <ActionList />
+            </div>
         </main>
     )
 }

@@ -120,7 +120,7 @@ const Board = () => {
             </div>
           </div> 
         </div>
-        <div className="aside-components">
+        <div>
           <Actions />
         </div>
       </main>
