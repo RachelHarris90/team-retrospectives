@@ -45,7 +45,7 @@ const ActionsForm = () => {
                 <label>
                     Action
                 </label>
-                <textarea
+                <textarea className="action-field"
                     label="Action"
                     name="text"
                     value={text}
@@ -57,7 +57,7 @@ const ActionsForm = () => {
                 <label>
                     Assignee
                 </label>
-                <input
+                <input className="assignee-field"
                     label="Assignee"
                     name="assignee"
                     value={assignee}
