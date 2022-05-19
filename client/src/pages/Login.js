@@ -43,28 +43,33 @@ const Login = (props) => {
   };
 
   return (
-    <main className="flex-row justify-center mb-4">
-      <div className="col-12 col-lg-10">
-        <div className="card">
-          <h4 className="card-header bg-dark text-light p-2">Login</h4>
-          <div className="card-body">
+    <main>
+      <div>
+        <div className="container">
+          <h3>Login</h3>
+          <div>
             {data ? (
               <p>
-                Success! You may now head{' '}
-                <Link to="/">back to the homepage.</Link>
+                Success! You're now being logged in
               </p>
             ) : (
               <form onSubmit={handleFormSubmit}>
+                <label>
+                  Email address
+                </label>
                 <input
-                  className="form-input"
+                  className="form-field"
                   placeholder="Your email"
                   name="email"
                   type="email"
                   value={formState.email}
                   onChange={handleChange}
                 />
+                <label>
+                  Password
+                </label>
                 <input
-                  className="form-input"
+                  className="form-field"
                   placeholder="******"
                   name="password"
                   type="password"
@@ -72,7 +77,7 @@ const Login = (props) => {
                   onChange={handleChange}
                 />
                 <button
-                  className="btn btn-block btn-info"
+                  className="add-button"
                   style={{ cursor: 'pointer' }}
                   type="submit"
                 >
@@ -82,7 +87,7 @@ const Login = (props) => {
             )}
 
             {error && (
-              <div className="my-3 p-3 bg-danger text-white">
+              <div  className="error">
                 {error.message}
               </div>
             )}

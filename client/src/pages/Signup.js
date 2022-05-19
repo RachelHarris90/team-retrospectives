@@ -41,11 +41,11 @@ const Signup = () => {
   };
 
   return (
-    <main className="flex-row justify-center mb-4">
-      <div className="col-12 col-lg-10">
-        <div className="card">
-          <h4 className="card-header bg-dark text-light p-2">Sign Up</h4>
-          <div className="card-body">
+    <main>
+      <div>
+        <div className="container">
+          <h3>Sign up</h3>
+          <div>
             {data ? (
               <p>
                 Success! You may now head{' '}
@@ -53,24 +53,33 @@ const Signup = () => {
               </p>
             ) : (
               <form onSubmit={handleFormSubmit}>
+                <label>
+                  Name
+                </label>
                 <input
-                  className="form-input"
-                  placeholder="Your username"
+                  className="form-field"
+                  placeholder="Your name"
                   name="name"
                   type="text"
                   value={formState.name}
                   onChange={handleChange}
                 />
+                <label>
+                  Email address
+                </label>
                 <input
-                  className="form-input"
+                  className="form-field"
                   placeholder="Your email"
                   name="email"
                   type="email"
                   value={formState.email}
                   onChange={handleChange}
                 />
+                <label>
+                  Password
+                </label>
                 <input
-                  className="form-input"
+                  className="form-field"
                   placeholder="******"
                   name="password"
                   type="password"
@@ -78,7 +87,7 @@ const Signup = () => {
                   onChange={handleChange}
                 />
                 <button
-                  className="btn btn-block btn-info"
+                  className="add-button"
                   style={{ cursor: 'pointer' }}
                   type="submit"
                 >
@@ -88,7 +97,7 @@ const Signup = () => {
             )}
 
             {error && (
-              <div className="my-3 p-3 bg-danger text-white">
+              <div className="error">
                 {error.message}
               </div>
             )}

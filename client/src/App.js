@@ -10,7 +10,6 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import Header from './components/Header.js';
 import Profile from './pages/Profile';
-import BoardList from './pages/BoardList.js';
 import Board from './pages/Board.js';
 import Signup from './pages/Signup.js';
 import Login from './pages/Login.js';
@@ -53,14 +52,6 @@ function App() {
               <Route 
                 path='/login'
                 element={<Login />}
-              />
-              <Route 
-                path="/me" 
-                element={<Profile />}
-              />
-              <Route 
-                path="/profiles/:profileId"
-                element={<Profile />}
               />
               <Route 
                   path="/" 
