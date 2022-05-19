@@ -1,7 +1,6 @@
 import '../index.css'
 
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 import { LOGIN_USER } from '../utils/mutations';
 
@@ -42,6 +41,8 @@ const Login = (props) => {
     });
   };
 
+
+
   return (
     <main>
       <div>
@@ -50,7 +51,7 @@ const Login = (props) => {
           <div>
             {data ? (
               <p>
-                Success! You're now being logged in
+                Success! You are logged in!
               </p>
             ) : (
               <form onSubmit={handleFormSubmit}>

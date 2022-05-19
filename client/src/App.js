@@ -54,11 +54,11 @@ function App() {
                 element={<Login />}
               />
               <Route 
-                  path="/" 
+                  path="/home" 
                   element={<Home />} 
               />
               <Route 
-                  path="/board" 
+                  path="/" 
                   element={<Board />} 
               />
               <Route 
